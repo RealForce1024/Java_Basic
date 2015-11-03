@@ -11,11 +11,16 @@ public class GuessNumber {
         Scanner scanner = new Scanner(System.in);
         int random_num = (int) (Math.random()*10);
         int guess_num = 0;
+
         do {
-            System.out.println("please input 0~9");
+            System.out.println("Please input one num of [0~9] ");
             guess_num = scanner.nextInt();
-            System.out.println("guess_number = " + guess_num);
+            System.out.println("guess_num = " + guess_num);
             System.out.println("random_num = " + random_num);
-        } while (guess_num != random_num);
+        }while(random_num != guess_num);
     }
+
+
+
+
 }
