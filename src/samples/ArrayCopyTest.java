@@ -8,8 +8,7 @@ import java.util.Arrays;
  * Created by fqc on 15/11/26.
  */
 
-
-class Clothes{
+class Clothes extends Object{
 
     public Clothes(String color, String size) {
         this.color = color;
