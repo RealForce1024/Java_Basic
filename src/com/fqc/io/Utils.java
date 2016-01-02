@@ -11,7 +11,7 @@ import java.io.OutputStream;
  * @date 16/1/2
  */
 public class Utils {
-    private void dump(InputStream is, OutputStream os) throws IOException{
+    public static void dump(InputStream is, OutputStream os) throws IOException{
         try(InputStream source = is; OutputStream dest = os;){
             byte[] data = new byte[1024];
             int length = 0;
