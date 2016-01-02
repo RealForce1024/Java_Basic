@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.io.*;
 import java.net.URL;
+import java.util.Scanner;
 
 import static org.junit.Assert.*;
 
@@ -36,5 +37,18 @@ public class UtilsTest {
         InputStream is = url.openStream();
         FileOutputStream os = new FileOutputStream(new File("/Users/fqc/git_workspace/Java_Basic/src/com/fqc/io/file/baidu.txt"));
         utils.dump(is, os);
+    }
+
+
+    @Test //scanner 包装InputStream
+    public void testScanerFileInput() throws Exception {
+        System.setIn(new FileInputStream("/Users/fqc/git_workspace/Java_Basic/src/com/fqc/io/file/baidu.txt"));
+        try (Scanner scanner = new Scanner(System.in)) {
+            while (scanner.hasNextLine()) {
+                System.out.println(scanner.nextLine());
+            }
+        }
+
+
     }
 }
