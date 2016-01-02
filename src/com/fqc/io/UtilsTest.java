@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.*;
+import java.net.URL;
 
 import static org.junit.Assert.*;
 
@@ -23,9 +24,17 @@ public class UtilsTest {
     }
 
     @Test
-    public void testDump() throws IOException{
+    public void testFileDump() throws IOException{
         InputStream is = new FileInputStream("/Users/fqc/git_workspace/Java_Basic/src/com/fqc/io/Utils.java");
         FileOutputStream os = new FileOutputStream(new File("/Users/fqc/git_workspace/Java_Basic/src/com/fqc/io/Utils.txt"));
+        utils.dump(is, os);
+    }
+
+    @Test
+    public void testUriDump() throws Exception {
+        URL url = new URL("http://www.baidu.com");
+        InputStream is = url.openStream();
+        FileOutputStream os = new FileOutputStream(new File("/Users/fqc/git_workspace/Java_Basic/src/com/fqc/io/baidu.txt"));
         utils.dump(is, os);
     }
 }
