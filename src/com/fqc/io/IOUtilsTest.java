@@ -8,15 +8,13 @@ import java.io.*;
 import java.net.URL;
 import java.util.Scanner;
 
-import static org.junit.Assert.*;
+public class IOUtilsTest {
 
-public class UtilsTest {
-
-    Utils utils = null;
+    IOUtils ioUtils = null;
     @Before
     public void setUp() throws Exception {
         System.out.println("执行开始======");
-        utils = new Utils();//由于之后修改为了静态方法，所以该实例化相关的操作可以省略。
+        ioUtils = new IOUtils();//由于之后修改为了静态方法，所以该实例化相关的操作可以省略。
     }
 
     @After
@@ -28,7 +26,7 @@ public class UtilsTest {
     public void testFileDump() throws IOException{
         InputStream is = new FileInputStream("/Users/fqc/git_workspace/Java_Basic/src/com/fqc/io/Utils.java");
         FileOutputStream os = new FileOutputStream(new File("/Users/fqc/git_workspace/Java_Basic/src/com/fqc/io/file/Utils.txt"));
-        utils.dump(is, os);
+        ioUtils.dump(is, os);
     }
 
     @Test
@@ -36,7 +34,7 @@ public class UtilsTest {
         URL url = new URL("http://www.baidu.com");
         InputStream is = url.openStream();
         FileOutputStream os = new FileOutputStream(new File("/Users/fqc/git_workspace/Java_Basic/src/com/fqc/io/file/baidu.txt"));
-        utils.dump(is, os);
+        ioUtils.dump(is, os);
     }
 
 

@@ -8,7 +8,7 @@ import java.io.*;
  * @author fqc
  * @date 16/1/2
  */
-public class Utils {
+public class IOUtils {
     public static void dump(InputStream is, OutputStream os) throws IOException{
         try(InputStream source = is; OutputStream dest = os;){
             byte[] data = new byte[1024];
