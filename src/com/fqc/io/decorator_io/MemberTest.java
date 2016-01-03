@@ -2,8 +2,6 @@ package com.fqc.io.decorator_io;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class MemberTest {
 
     @Test
