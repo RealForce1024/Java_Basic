@@ -46,7 +46,32 @@ public class IOUtilsTest {
                 System.out.println(scanner.nextLine());
             }
         }
+    }
 
 
+    @Test
+    public void testCharDump() throws Exception {
+        FileReader fileReader = new FileReader("/Users/fqc/git_workspace/Java_Basic/src/com/fqc/io/file/baidu.txt");
+        StringWriter stringWriter = new StringWriter();
+        ioUtils.charDump(fileReader,stringWriter);
+        System.out.println(stringWriter.toString());
+    }
+
+
+    @Test
+    public void testCharDump1() throws Exception {
+        ioUtils.charDump(
+                new FileInputStream("/Users/fqc/git_workspace/Java_Basic/src/com/fqc/io/file/baidu.txt"),
+                new FileOutputStream("/Users/fqc/git_workspace/Java_Basic/src/com/fqc/io/file/baidu2.txt"),
+                "utf-8"
+        );
+    }
+
+    @Test
+    public void testCharDump2() throws Exception {
+        ioUtils.charDump(
+                new FileInputStream("/Users/fqc/git_workspace/Java_Basic/src/com/fqc/io/file/baidu.txt"),
+                new FileOutputStream("/Users/fqc/git_workspace/Java_Basic/src/com/fqc/io/file/baidu2.txt")
+        );
     }
 }

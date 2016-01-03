@@ -1,6 +1,7 @@
 package com.fqc.io;
 
 import java.io.*;
+import java.nio.charset.Charset;
 
 /**
  * com.fqc.io
@@ -27,4 +28,36 @@ public class IOUtils {
             }
         }
     }
+
+    public static void charDump(Reader src, Writer desc) throws  IOException{
+        try (Reader input = src; Writer output = desc;) {
+            char[] data = new char[1024];
+            int length = 0;
+            while ((length=input.read(data))!=-1){
+                output.write(data);
+            }
+        }
+    }
+    public static void charDump(InputStream src, OutputStream desc, String charSet) throws  IOException{
+       charDump(
+               new InputStreamReader(src,charSet),
+               new OutputStreamWriter(desc,charSet)
+       );
+    }
+
+
+    public static void charDump(InputStream src, OutputStream desc) throws  IOException {
+        charDump(src, desc, System.getProperty("file.encoding"));
+    }
+
+
+
+
+
+
+
+
+
+
+
 }
