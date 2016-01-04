@@ -1,7 +1,5 @@
 package com.fqc.concurrency;
 
-import sun.awt.windows.ThemeReader;
-
 /**
  * Created by fqc on 2016/1/4.
  */
