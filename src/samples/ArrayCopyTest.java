@@ -15,6 +15,8 @@ class Clothes extends Object{
         this.size = size;
     }
 
+
+
     public String color;
     public String size;
 
@@ -24,6 +26,7 @@ public class ArrayCopyTest {
     public static void main(String[] args) {
 
         Clothes[] c1 = {new Clothes("red", "1"),new Clothes("red2", "2")};
+
         Arrays.copyOf(c1, c1.length);
         Clothes[] c2 = Arrays.copyOf(c1, c1.length);
         for (Clothes clothes : c2) {
