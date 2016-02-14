@@ -9,7 +9,8 @@ import java.util.DoubleSummaryStatistics;
 public class TypeRange {
     public static void main(String[] args) {
 
-        testByte();
+        //testByte();
+        testTypeRange();
     }
 
     public static void testTypeRange() {
@@ -41,7 +42,16 @@ public class TypeRange {
         0~ffff
         false~true
         * */
-    }
+
+        System.out.printf("%6.2f%n",10.0);//%6.2f .2两位小数 6整体5位包含小数点不够补空格
+        System.out.println(10.0);
+        /*
+          10.00
+         10.0
+         */
+
+
+     }
 
     public static void testByte() {
         String str1 = "中国";
