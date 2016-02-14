@@ -21,6 +21,8 @@ public class GuessNum {
             guessNum = new Scanner(System.in).nextInt();
             random = (int) (Math.random() * 10);
             System.out.println(String.format("随机数:%d,猜数:%d",random,guessNum));
+            //randomNum = (int)(Math.random()*10);//random 随机数0.xxxxx.~1
+            //System.out.println("猜数:"+guessNum+"随机数:"+randomNum);
 
         } while (random!=guessNum);
     }
