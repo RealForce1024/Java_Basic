@@ -10,13 +10,13 @@ import java.util.Arrays;
 
 class Clothes extends Object{
 
+    public Clothes() {
+    }
+
     public Clothes(String color, String size) {
         this.color = color;
         this.size = size;
     }
-
-
-
     public String color;
     public String size;
 
