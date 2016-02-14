@@ -1,12 +1,4 @@
 package samples;
-
-
-/**
- * ${PACKAGE_NAME}
- * @author ${USER}
- * @date ${DATE}
- */
-
 /**
  * samples
  *
