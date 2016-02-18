@@ -1,5 +1,7 @@
 package samples;
 
+import java.util.Arrays;
+
 /**
  * samples
  *
@@ -17,10 +19,10 @@ public class InsertSort {
     */
 
     public static void main(String[] args) {
-        insertSort(new int[]{1, 3, 2, 4, 8, 6, 5, 0});
+        System.out.println(Arrays.toString(insertSort(new int[]{1, 3, 2, 4, 8, 6, 5, 0})));
     }
 
-    public static void insertSort(int a[]){
+    public static int[] insertSort(int a[]){
         int length=a.length; //数组长度
         int j;               //当前值的位置
         int i;               //指向j前的位置
@@ -36,9 +38,11 @@ public class InsertSort {
             }//跳出循环(找到要插入的中间位置或已遍历到0下标)
             a[i+1]=key;    //将当前值插入
         }
-        for (int i1 : a) {
-            System.out.print(i1);
-        }
+//        for (int i1 : a) {
+//            System.out.print(i1);
+//        }
+        return a;
+
     }
 
 }
