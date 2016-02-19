@@ -19,7 +19,7 @@ public class InsertSort {
     */
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(insertSort(new int[]{1, 3, 2, 4, 8, 6, 5, 0})));
+        System.out.println(Arrays.toString(insertSort2(new int[]{1, 3, 2, 4, 8, 6, 5, 0})));
     }
 
     public static int[] insertSort(int a[]){
@@ -43,6 +43,18 @@ public class InsertSort {
 //        }
         return a;
 
+    }
+
+
+    public static int[] insertSort2(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            int temp = array[i];
+            for (int j = i - 1; j >= 0 && temp < array[j]; j--) {
+                array[j + 1] = array[j];
+                array[j] = temp;
+            }
+        }
+        return array;
     }
 
 }
