@@ -4,10 +4,8 @@ package com.fqc.io;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.lang.reflect.Array;
+import java.util.*;
 
 /**
  * com.fqc.io
@@ -74,15 +72,17 @@ public class IOUtils {
         String[] arrs = null;
 //        while ((line = br.readLine())!=null) { //apache isEmpty (line = br.readLine())!=null
 //            if (!line.equals("")) {//line != ""
-        HashMap<String, Set> logMaps = new HashMap<String, Set>();;
-        HashSet set = new HashSet();
+        HashMap<String, List> logMaps = new HashMap<String, List>();;
+//        HashSet set = new HashSet();
+        ArrayList dateList = new ArrayList();
         while (StringUtils.isNotEmpty(line = br.readLine())) {
+
             arrs = line.split(" -- ");
             System.out.println(arrs[0] + " : " + arrs[1]);
             String ip = arrs[0];
             String date = arrs[1];
-            set.add(date);
-            logMaps.put(ip, set);
+            dateList.add(date);
+            logMaps.put(ip, dateList);
 
         }
         br.close();
