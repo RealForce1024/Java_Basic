@@ -74,4 +74,19 @@ public class IOUtilsTest {
                 new FileOutputStream("/Users/fqc/git_workspace/Java_Basic/src/com/fqc/io/file/baidu2.txt")
         );
     }
+
+    @Test
+    public void testDump() throws Exception {
+
+    }
+
+    @Test
+    public void testBuffer_dump() throws Exception {
+
+    }
+
+    @Test
+    public void testReadFile01() throws Exception {
+        ioUtils.readFile01();
+    }
 }

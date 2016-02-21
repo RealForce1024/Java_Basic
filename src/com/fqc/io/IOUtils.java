@@ -1,5 +1,7 @@
 package com.fqc.io;
 
+import com.sun.deploy.util.StringUtils;
+
 import java.io.*;
 import java.nio.charset.Charset;
 
@@ -51,7 +53,27 @@ public class IOUtils {
     }
 
 
+    /**
+     * 一行一行读取文件，适合字符读取，若读取中文字符时会出现乱码
+     * 流的关闭顺序：先打开的后关，后打开的先关，
+     *       否则有可能出现java.io.IOException: Stream closed异常
+     * @throws IOException
+     */
 
+    public void readFile01() throws IOException {
+        FileReader fr=new FileReader("/Users/fqc/git_workspace/Java_Basic/src/samples/2013-05-30.log");
+        BufferedReader br=new BufferedReader(fr);
+        String line="";
+        String[] arrs=null;
+        while ((line = br.readLine())!=null) { //apache isEmpty (line = br.readLine())!=null
+            if (!line.equals("")) {//line != ""
+                arrs=line.split(",");
+                System.out.println(arrs[0] + " : " + arrs[1]);
+            }
+        }
+        br.close();
+        fr.close();
+    }
 
 
 
