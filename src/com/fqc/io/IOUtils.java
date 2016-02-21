@@ -1,9 +1,9 @@
 package com.fqc.io;
 
-import com.sun.deploy.util.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.*;
-import java.nio.charset.Charset;
 
 /**
  * com.fqc.io
@@ -65,11 +65,11 @@ public class IOUtils {
         BufferedReader br=new BufferedReader(fr);
         String line="";
         String[] arrs=null;
-        while ((line = br.readLine())!=null) { //apache isEmpty (line = br.readLine())!=null
-            if (!line.equals("")) {//line != ""
-                arrs=line.split(",");
-                System.out.println(arrs[0] + " : " + arrs[1]);
-            }
+//        while ((line = br.readLine())!=null) { //apache isEmpty (line = br.readLine())!=null
+//            if (!line.equals("")) {//line != ""
+        while (StringUtils.isNotEmpty(line=br.readLine())) { //apache isEmpty (line = br.readLine())!=null
+            arrs=line.split(",");
+            System.out.println(arrs[0] + " : " + arrs[1]);
         }
         br.close();
         fr.close();
