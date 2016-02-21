@@ -77,7 +77,7 @@ public class IOUtils {
         ArrayList dateList = new ArrayList();
         while (StringUtils.isNotEmpty(line = br.readLine())) {
 
-            arrs = line.split(" -- ");
+            arrs = line.split(" -- \\[");
             System.out.println(arrs[0] + " : " + arrs[1]);
             String ip = arrs[0];
             String date = arrs[1];
