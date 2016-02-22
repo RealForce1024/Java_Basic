@@ -4,8 +4,9 @@ package com.fqc.io;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.*;
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * com.fqc.io
