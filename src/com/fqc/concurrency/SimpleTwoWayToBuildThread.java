@@ -8,6 +8,25 @@ import com.fqc.io.IOUtils;
 public class SimpleTwoWayToBuildThread {
 
     public static void main(String[] args) {
+        //Test1();
+        Test2();
+
+
+    }
+
+    private static void Test2() {
+        MyThread2 myThread1 = new MyThread2();
+        MyThread2 myThread2 = new MyThread2();
+
+        Thread t1 = new Thread(myThread1, "Thread-1");
+        Thread t2 = new Thread(myThread2, "Thread-2");
+
+        t1.start();
+        t2.start();
+    }
+
+
+    private static void Test1() {
         //1,2
         MyThread myThread = new MyThread("Thread-1");
         MyThread myThread2 = new MyThread("Thread-2");
@@ -48,6 +67,25 @@ class MyThread extends Thread {
                 e.printStackTrace();
             }
             System.out.println(this.currentThread().getName() + "---" + a++);
+
+        }
+    }
+}
+
+class MyThread2 implements Runnable {
+    private int a = 0; //1
+
+    @Override
+    public void run() {
+        //int a = 0; //2
+        for (int i = 0; i < 100; i++) {
+            try {
+                Thread.sleep((long) (Math.random() * 1000));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            //System.out.println(this.currentThread().getName() + "---" + a++);
+            System.out.println(Thread.currentThread().getName() + "---" + a++);
 
         }
     }
