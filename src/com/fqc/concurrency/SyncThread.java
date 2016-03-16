@@ -34,11 +34,16 @@ public class SyncThread implements  Runnable{
 
     /**
      * 对实例对象的value值进行检查
+     * public synchronized void doSomething 【脏读问题】
+     * public synchronized static void doSomething
      */
-    public synchronized void doSomething(String thread_name) {
-        NOWVALUE = this.value;
-        LOGGER.info(NOWVALUE+"---"+thread_name);
+    public  void doSomething(String thread_name) {
+        synchronized (this.getClass()) {
+            NOWVALUE = this.value;
+            LOGGER.info(NOWVALUE + "---" + thread_name);
+        }
     }
+
     @Override
     public void run() {
         Thread t0 = Thread.currentThread();
