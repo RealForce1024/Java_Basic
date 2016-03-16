@@ -35,7 +35,7 @@ public class SyncThread implements  Runnable{
     /**
      * 对实例对象的value值进行检查
      */
-    public void doSomething(String thread_name) {
+    public synchronized void doSomething(String thread_name) {
         NOWVALUE = this.value;
         LOGGER.info(NOWVALUE+"---"+thread_name);
     }
