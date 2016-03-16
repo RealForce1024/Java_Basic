@@ -1,17 +1,23 @@
 package com.fqc.concurrency;
 
 import com.fqc.io.IOUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.ConsoleAppender;
+import org.apache.log4j.PatternLayout;
 
 /**
  * Created by fqc on 2016/1/4.
  */
 public class SimpleTwoWayToBuildThread {
 
+    static {
+        BasicConfigurator.configure();
+    }
     public static void main(String[] args) {
         //Test1();
         Test2();
-
-
     }
 
     private static void Test2() {
@@ -46,6 +52,7 @@ public class SimpleTwoWayToBuildThread {
 
 class MyThread extends Thread {
 
+    public static final Log LOGGER = LogFactory.getLog(MyThread.class);
 
     private int a = 0; //1
 
@@ -66,13 +73,21 @@ class MyThread extends Thread {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(this.currentThread().getName() + "---" + a++);
+            //System.out.println(this.currentThread().getName() + "---" + a++);
+            LOGGER.info(this.currentThread().getName() + "---" + a++);
 
         }
     }
 }
 
 class MyThread2 implements Runnable {
+
+    static {
+        BasicConfigurator.configure();
+    }
+
+
+    public static final Log LOGGER = LogFactory.getLog(MyThread.class);
     private int a = 0; //1
 
     @Override
@@ -85,7 +100,8 @@ class MyThread2 implements Runnable {
                 e.printStackTrace();
             }
             //System.out.println(this.currentThread().getName() + "---" + a++);
-            System.out.println(Thread.currentThread().getName() + "---" + a++);
+            //System.out.println(Thread.currentThread().getName() + "---" + a++);
+            LOGGER.info(Thread.currentThread().getName() + "---" + a++);
 
         }
     }
