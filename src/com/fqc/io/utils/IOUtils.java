@@ -52,11 +52,9 @@ public class IOUtils {
         );
     }
 
-
     public static void charDump(InputStream src, OutputStream desc) throws IOException {
         charDump(src, desc, System.getProperty("file.encoding"));
     }
-
 
     /**
      * 一行一行读取文件，适合字符读取，若读取中文字符时会出现乱码
@@ -65,7 +63,6 @@ public class IOUtils {
      *
      * @throws IOException
      */
-
     public void readFile01() throws IOException {
         FileReader fr = new FileReader("/Users/fqc/git_workspace/Java_Basic/src/samples/2013-05-30.log");
         BufferedReader br = new BufferedReader(fr);
@@ -91,5 +88,11 @@ public class IOUtils {
         System.out.println(logMaps.get("27.19.74.143"));
     }
 
-
+    /**
+     * 获取当前工程路径
+     * @return projectPath
+     */
+    public static String getProjectPath() {
+         return System.getProperty("user.dir");
+    }
 }
