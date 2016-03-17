@@ -1,11 +1,8 @@
 package com.fqc.concurrency;
 
-import com.fqc.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.ConsoleAppender;
-import org.apache.log4j.PatternLayout;
 
 /**
  * Created by fqc on 2016/1/4.

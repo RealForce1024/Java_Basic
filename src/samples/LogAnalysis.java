@@ -1,6 +1,6 @@
 package samples;
 
-import com.fqc.io.IOUtils;
+import com.fqc.io.utils.IOUtils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
