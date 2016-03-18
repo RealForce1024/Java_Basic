@@ -13,8 +13,6 @@ import java.net.URLConnection;
  * @date 16/3/17
  */
 public class URLConnectionTest {
-
-
     /**
      * 向指定URL发送POST方法的请求
      *
@@ -33,14 +31,14 @@ public class URLConnectionTest {
             // 打开和URL之间的连接
             URLConnection conn = realUrl.openConnection();
             // 设置通用的请求属性
-            conn.setRequestProperty("accept", "*/*");
+//            conn.setRequestProperty( "Content-type", "application/x-www-form-urlencoded");
+            conn.setRequestProperty( "Accept", "*/*" );
+            //conn.setRequestProperty("accept", "*/*");
             conn.setRequestProperty("connection", "Keep-Alive");
 //            conn.setRequestProperty("user-agent",
 //                    "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)");
-
-            conn.setRequestProperty("Content-Type","application/json");
+            conn.setRequestProperty("Content-Type", "application/json");
             conn.setRequestProperty("Authorization","Bearer 4/PLANzPEabQgYYTbbmXNNyPShg8HZkqYzG5rqWADt/O7IlR7erF1f9B+1kuyr79og35CD/4yPV2CYvkMqbUzw==");
-
 
             // 发送POST请求必须设置如下两行
             conn.setDoOutput(true);
@@ -85,7 +83,28 @@ public class URLConnectionTest {
 //        System.out.println(s);
 //发送POST请求
         String s1 = URLConnectionTest.sendPost("https://ussouthcentral.services.azureml.net/workspaces/2dad6072409241e89b5868a22adced99/services/6c03112ec20d4a5bab652cdfff6e9185/score" ,
-        "id=1");
+        "{\n" +
+                "  \"Id\": \"score00001\",\n" +
+                "  \"Instance\": {\n" +
+                "    \"FeatureVector\": {\n" +
+                "      \"age\": \"0\",\n" +
+                "      \"workclass\": \"value\",\n" +
+                "      \"fnlwgt\": \"0\",\n" +
+                "      \"education\": \"value\",\n" +
+                "      \"education-num\": \"0\",\n" +
+                "      \"marital-status\": \"value\",\n" +
+                "      \"occupation\": \"value\",\n" +
+                "      \"relationship\": \"value\",\n" +
+                "      \"race\": \"value\",\n" +
+                "      \"sex\": \"value\",\n" +
+                "      \"capital-gain\": \"0\",\n" +
+                "      \"capital-loss\": \"0\",\n" +
+                "      \"hours-per-week\": \"0\",\n" +
+                "      \"native-country\": \"value\"\n" +
+                "    },\n" +
+                "    \"GlobalParameters\": {}\n" +
+                "  }\n" +
+                "}");
         System.out.println(s1);
     }
 }
