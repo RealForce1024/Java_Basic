@@ -98,11 +98,13 @@ public class IOUtils {
          return System.getProperty("user.dir");
     }
 
-
+    /**
+     * 获取类到包名
+     * @param clazz
+     * @return
+     */
     public static String getPackagePath(Class clazz) {
-        Package pkg = clazz.getPackage();
-        String pkgName = pkg.getName();
-        return pkgName;
+        return clazz.getPackage().getName();
     }
 
     /**
