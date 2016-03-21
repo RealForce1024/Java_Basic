@@ -89,4 +89,20 @@ public class IOUtilsTest {
     public void testReadFile01() throws Exception {
         ioUtils.readFile01();
     }
+
+
+    @Test
+    public void testGetProjectPath() throws Exception {
+        System.out.println(ioUtils.getProjectPath());
+    }
+
+    @Test
+    public void testReadUrl() throws Exception {
+        ioUtils.readUrl("https://www.baidu.com");
+    }
+
+    @Test
+    public void testReadFile() throws Exception {
+        ioUtils.readFile("/Users/fqc/github/Java_Basic/src/com/fqc/io/file/baidu.txt");
+    }
 }
