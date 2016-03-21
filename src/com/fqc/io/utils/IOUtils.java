@@ -98,8 +98,11 @@ public class IOUtils {
          return System.getProperty("user.dir");
     }
 
-    public static String getPackagePath() {
-        return System.getProperty("");
+
+    public static String getPackagePath(Class clazz) {
+        Package pkg = clazz.getPackage();
+        String pkgName = pkg.getName();
+        return pkgName;
     }
 
     /**

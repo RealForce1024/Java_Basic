@@ -85,10 +85,6 @@ public class IOUtilsTest {
 
     }
 
-    @Test
-    public void testReadFile01() throws Exception {
-        ioUtils.readFile01();
-    }
 
 
     @Test
@@ -104,5 +100,10 @@ public class IOUtilsTest {
     @Test
     public void testReadFile() throws Exception {
         ioUtils.readFile("/Users/fqc/github/Java_Basic/src/com/fqc/io/file/baidu.txt");
+    }
+
+    @Test
+    public void testGetPackagePath() throws Exception {
+        System.out.println(ioUtils.getPackagePath(this.getClass()));
     }
 }
