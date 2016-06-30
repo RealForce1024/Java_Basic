@@ -3,6 +3,7 @@ package com.fqc.array;
 import sun.text.resources.cldr.rm.FormatData_rm;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by fqc on 2016/6/30.
@@ -13,7 +14,36 @@ public class TestArray {
     public static void main(String[] args) {
 
         //testCreateArray();
-        testMethodOfArray();
+        //testMethodOfArray();
+        testMethodOfArrays();
+    }
+
+
+    private static void testMethodOfArrays() {
+        //list 与数组间的转换 asList
+        List<Integer> list = Arrays.asList(1, 2, 3, 4);
+        Object[] objects = list.toArray();
+        System.out.println("Arrays.asList Arrays.toString =>" + Arrays.toString(objects));
+
+        //toString 见Arrays.toString()重写数组的的toString方法
+        //sort
+        int[] arrs = {3, 2, 5, 6, 3, 2, 1};
+        Arrays.sort(arrs);
+        System.out.println("Arrays.toStort=>" + Arrays.toString(arrs));
+        //copy
+        int[] newArrs = Arrays.copyOf(arrs, 3);
+        System.out.println("Arrays.copy =>" + Arrays.toString(newArrs));
+
+        //binarySearch
+        // Searches the specified array of ints for the specified value using the binary search algorithm.
+        // The array must be sorted (as by the sort(int[]) method) prior to making this call.
+        // If it is not sorted, the results are undefined.
+        // If the array contains multiple elements with the specified value,
+        // there is no guarantee which one will be found.
+        int i = Arrays.binarySearch(arrs,2);// now last step the arrs has been sorted  [1, 2, 2, 3, 3, 5, 6]
+        System.out.println(i);
+
+        
 
     }
 
