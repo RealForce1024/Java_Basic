@@ -1,7 +1,6 @@
 package com.fqc.io.utils;
 
 
-import org.apache.commons.lang3.StringUtils;
 
 import java.io.*;
 import java.net.URL;
@@ -19,6 +18,7 @@ public class IOUtils {
 
     /**
      * 抽象读写任何二进制流
+     *
      * @param is 字节输入流
      * @param os 字节输出流
      * @throws IOException
@@ -35,6 +35,7 @@ public class IOUtils {
 
     /**
      * 带有缓冲的抽象读写任何二进制流
+     *
      * @param is 字节输入流
      * @param os 字节输出流
      * @throws IOException
@@ -51,7 +52,8 @@ public class IOUtils {
 
     /**
      * 字符流读写
-     * @param src 字符输入流
+     *
+     * @param src  字符输入流
      * @param desc 字符输出流
      * @throws IOException
      */
@@ -67,8 +69,9 @@ public class IOUtils {
 
     /**
      * 指定字符编码的字符流读写
-     * @param src 字节输入流
-     * @param desc 字节输出流
+     *
+     * @param src     字节输入流
+     * @param desc    字节输出流
      * @param charSet 字符编码
      * @throws IOException
      */
@@ -81,7 +84,8 @@ public class IOUtils {
 
     /**
      * 默认系统字符编码的字符流读写
-     * @param src 字节输入流
+     *
+     * @param src  字节输入流
      * @param desc 字节输出流
      * @throws IOException
      */
@@ -92,14 +96,16 @@ public class IOUtils {
 
     /**
      * 获取当前工程路径
+     *
      * @return projectPath
      */
     public static String getProjectPath() {
-         return System.getProperty("user.dir");
+        return System.getProperty("user.dir");
     }
 
     /**
      * 获取类到包名
+     *
      * @param clazz
      * @return
      */
@@ -108,13 +114,14 @@ public class IOUtils {
     }
 
     /**
-     *创建文件
+     * 创建文件
+     *
      * @param destFileName
      * @return
      */
     public static boolean createFile(String destFileName) {
         File file = new File(destFileName);
-        if(file.exists()) {
+        if (file.exists()) {
             System.out.println("创建单个文件" + destFileName + "失败，目标文件已存在！");
             return false;
         }
@@ -123,10 +130,10 @@ public class IOUtils {
             return false;
         }
         //判断目标文件所在的目录是否存在
-        if(!file.getParentFile().exists()) {
+        if (!file.getParentFile().exists()) {
             //如果目标文件所在的目录不存在，则创建父目录
             System.out.println("目标文件所在目录不存在，准备创建它！");
-            if(!file.getParentFile().mkdirs()) {
+            if (!file.getParentFile().mkdirs()) {
                 System.out.println("创建目标文件所在目录失败！");
                 return false;
             }
@@ -149,6 +156,7 @@ public class IOUtils {
 
     /**
      * 创建目录
+     *
      * @param destDirName
      * @return
      */
@@ -175,7 +183,7 @@ public class IOUtils {
     public static String createTempFile(String prefix, String suffix, String dirName) {
         File tempFile = null;
         if (dirName == null) {
-            try{
+            try {
                 //在默认文件夹下创建临时文件
                 tempFile = File.createTempFile(prefix, suffix);
                 //返回临时文件的路径
@@ -208,13 +216,14 @@ public class IOUtils {
 
     /**
      * 从url流中读取文字，封装使用commons io
+     *
      * @param url
      */
     public static void readUrl(String url) {
         InputStream in = null;
         try {
-            in = new URL( url ).openStream();
-            System.out.println( org.apache.commons.io.IOUtils.toString(in) );//直接封装了 inputStreamReader BufferReader
+            in = new URL(url).openStream();
+            System.out.println(org.apache.commons.io.IOUtils.toString(in));//直接封装了 inputStreamReader BufferReader
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -224,6 +233,7 @@ public class IOUtils {
 
     /**
      * 读取文件
+     *
      * @param filePath
      */
     public static void readFile(String filePath) {
