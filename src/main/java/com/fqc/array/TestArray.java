@@ -17,6 +17,9 @@ public class TestArray {
 
     }
 
+    /**
+     * 数组长度属性及遍历
+     */
     private static void testMethodOfArray() {
         int[] arrs = {1, 32, 43, 4, 2, 0, 2};
         //数组长度 为属性
@@ -29,9 +32,8 @@ public class TestArray {
             System.out.println("arrs.forr:遍历" + arrs[i]);
         }
         for (int arr : arrs) {
-            System.out.println("arrs.for:遍历"+arr);
+            System.out.println("arrs.for:遍历" + arr);
         }
-
     }
 
 
