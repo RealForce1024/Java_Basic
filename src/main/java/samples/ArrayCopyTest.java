@@ -1,7 +1,5 @@
 package samples;
 
-import com.fqc.Main;
-
 import java.util.Arrays;
 
 /**
