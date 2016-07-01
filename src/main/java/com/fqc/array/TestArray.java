@@ -43,8 +43,6 @@ public class TestArray {
         int i = Arrays.binarySearch(arrs,2);// now last step the arrs has been sorted  [1, 2, 2, 3, 3, 5, 6]
         System.out.println(i);
 
-        
-
     }
 
     /**
