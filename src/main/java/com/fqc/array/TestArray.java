@@ -1,7 +1,5 @@
 package com.fqc.array;
 
-import sun.text.resources.cldr.rm.FormatData_rm;
-
 import java.util.Arrays;
 import java.util.List;
 
