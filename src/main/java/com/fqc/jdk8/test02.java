@@ -11,3 +11,7 @@ public class test02 {
         Arrays.stream(arr).forEach(outPrint.andThen(errPrint));
     }
 }
+
+
+
+
