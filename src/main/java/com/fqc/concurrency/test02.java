@@ -8,7 +8,7 @@ public class test02 {
 }
 
 class MyThread02 {
-    //private int num = 10;
+    //private int i = 10;
     private static int num = 10; //fix
 
     //public  synchronized void printNum(String flag) {
@@ -25,7 +25,7 @@ class MyThread02 {
             num = 200;
             System.out.println("set task2");
         }
-        System.out.println("flag:" + flag + " num:" + num);
+        System.out.println("flag:" + flag + " i:" + num);
     }
 }
 
