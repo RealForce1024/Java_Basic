@@ -91,7 +91,7 @@ public class URLConnectionTest {
                 "      \"workclass\": \"value\",\n" +
                 "      \"fnlwgt\": \"0\",\n" +
                 "      \"education\": \"value\",\n" +
-                "      \"education-num\": \"0\",\n" +
+                "      \"education-i\": \"0\",\n" +
                 "      \"marital-status\": \"value\",\n" +
                 "      \"occupation\": \"value\",\n" +
                 "      \"relationship\": \"value\",\n" +

@@ -72,7 +72,7 @@ public class HttpURLConnectionExample {
         con.setRequestProperty("Authorization","Bearer 4/PLANzPEabQgYYTbbmXNNyPShg8HZkqYzG5rqWADt/O7IlR7erF1f9B+1kuyr79og35CD/4yPV2CYvkMqbUzw==");
 
 
-        String urlParameters = "sn=C02G8416DRJM&cn=&locale=&caller=&num=12345";
+        String urlParameters = "sn=C02G8416DRJM&cn=&locale=&caller=&i=12345";
 
         // Send post request
         con.setDoOutput(true);
