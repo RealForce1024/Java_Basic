@@ -1,7 +1,13 @@
+/*
 package sample.aop.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+*/
+/**
+ * @author fqc
+ *//*
 
 @Component
 public class HelloWorldService {
@@ -13,4 +19,4 @@ public class HelloWorldService {
 		return "Hello " + this.name;
 	}
 
-}
+}*/

@@ -1,3 +1,4 @@
+/*
 package sample.aop;
 
 
@@ -6,6 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+*/
+/**
+ * @author fqc
+ *//*
 
 @SpringBootApplication
 public class SampleAopApplication implements CommandLineRunner {
@@ -24,4 +30,4 @@ public class SampleAopApplication implements CommandLineRunner {
 		SpringApplication.run(SampleAopApplication.class, args);
 	}
 
-}
+}*/
