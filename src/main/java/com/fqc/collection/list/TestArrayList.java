@@ -24,6 +24,5 @@ public class TestArrayList {
         Object[] objects = list.toArray();
         System.out.println("Arrays.asList Arrays.toString =>" + Arrays.toString(objects));
 
-
     }
 }

@@ -22,7 +22,7 @@ public class SyncThread implements  Runnable{
     public static final Log LOGGER = LogFactory.getLog(SyncThread.class);
 
     private Integer value; //如果该值为static则将被最后者覆盖
-    private static Integer NOWVALUE;
+    private static  Integer NOWVALUE;
 
     public SyncThread(Integer value) {
         this.value = value;

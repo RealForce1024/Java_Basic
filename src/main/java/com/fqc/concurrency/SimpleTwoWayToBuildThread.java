@@ -5,13 +5,16 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.log4j.BasicConfigurator;
 
 /**
- * Created by fqc on 2016/1/4.
+ *
+ * @author fqc
+ * @date 2016/1/4
  */
 public class SimpleTwoWayToBuildThread {
 
     static {
         BasicConfigurator.configure();
     }
+
     public static void main(String[] args) {
         //Test1();
         Test2();
@@ -71,7 +74,7 @@ class MyThread extends Thread {
                 e.printStackTrace();
             }
             //System.out.println(this.currentThread().getName() + "---" + a++);
-            LOGGER.info(this.currentThread().getName() + "---" + a++);
+            LOGGER.info(Thread.currentThread().getName() + "---" + a++);
 
         }
     }
